@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgenticSeek macOS Deployment</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+        }
+        pre {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .step {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #3498db;
+        }
+        .note {
+            background-color: #fffacd;
+            padding: 10px;
+            border-left: 4px solid #f1c40f;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>AgenticSeek macOS Deployment Guide</h1>
+    
+    <p>This guide provides step-by-step instructions for deploying AgenticSeek on macOS using our automated deployment script.</p>
+    
+    <div class="step">
+        <h2>Step 1: Clone the Repository</h2>
+        <pre><code>git clone https://github.com/chalizardking/agenticSeek.git
+cd agenticSeek</code></pre>
+    </div>
+    
+    <div class="step">
+        <h2>Step 2: Switch to the Deployment Branch</h2>
+        <pre><code>git checkout devin/1746498410-mac-deployment-implementation</code></pre>
+    </div>
+    
+    <div class="step">
+        <h2>Step 3: Run the Deployment Script</h2>
+        <pre><code>chmod +x scripts/mac_deploy.sh
+./scripts/mac_deploy.sh</code></pre>
+        <p>This script will:</p>
+        <ul>
+            <li>Check and install all required dependencies</li>
+            <li>Configure the environment for macOS</li>
+            <li>Set up Ollama and download the recommended model</li>
+            <li>Start all required services</li>
+            <li>Provide instructions for running the application</li>
+        </ul>
+    </div>
+    
+    <div class="step">
+        <h2>Step 4: Run AgenticSeek</h2>
+        <p>After the deployment script completes, you can run AgenticSeek using either:</p>
+        
+        <h3>CLI Interface (recommended for first-time use):</h3>
+        <pre><code>source agentic_seek_env/bin/activate
+python3 cli.py</code></pre>
+        
+        <h3>Web Interface:</h3>
+        <pre><code>source agentic_seek_env/bin/activate
+python3 api.py</code></pre>
+        <p>Then open <a href="http://localhost:3000/">http://localhost:3000/</a> in your browser.</p>
+    </div>
+    
+    <div class="note">
+        <h3>Note:</h3>
+        <p>The deployment script is designed specifically for macOS and handles all the necessary dependencies and configuration automatically. If you encounter any issues, please refer to the troubleshooting section in the <a href="https://github.com/chalizardking/agenticSeek/blob/devin/1746498410-mac-deployment-implementation/scripts/mac_deploy.sh">deployment script</a>.</p>
+    </div>
+    
+    <div class="step">
+        <h2>Verification</h2>
+        <p>Test the installation with the following queries:</p>
+        <ol>
+            <li>Basic functionality: <code>Hello, what can you do?</code></li>
+            <li>Web browsing capability: <code>Search the web for the current date and time in Paris.</code></li>
+            <li>Coding capability: <code>Write a simple Python function to calculate the factorial of a number.</code></li>
+        </ol>
+    </div>
+    
+    <footer>
+        <p>For more information, visit the <a href="https://github.com/chalizardking/agenticSeek">AgenticSeek GitHub repository</a>.</p>
+    </footer>
+</body>
+</html>
