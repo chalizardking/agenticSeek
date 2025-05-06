@@ -92,6 +92,21 @@ Install requirements: `pip3 install -r requirements.txt`
 
 - *Macos*:
 
+**Option 1: One-step Deployment (Recommended)**
+
+Use our dedicated macOS deployment script:
+```sh
+./scripts/mac_deploy.sh
+```
+This script will automatically:
+- Check and install all required dependencies
+- Configure the environment for macOS
+- Set up Ollama and download the recommended model
+- Start all required services
+- Provide instructions for running the application
+
+**Option 2: Manual Installation**
+
 Update brew : `brew update`
 
 Install chromedriver : `brew install --cask chromedriver`
