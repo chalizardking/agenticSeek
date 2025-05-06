@@ -104,6 +104,8 @@ Upgrade wheel : : `pip3 install --upgrade setuptools wheel`
 
 Install requirements: `pip3 install -r requirements.txt`
 
+For a comprehensive macOS deployment guide, see [macOS Deployment Guide](./docs/MACOS_DEPLOYMENT.md).
+
 - *Windows*:
 
 Install pyreadline3 `pip install pyreadline3`
